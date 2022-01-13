@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="main.css" />
+     <title> cerealisasoup </title>
+     <script>
+        function banner(){
+          var text = confirm("Don't touch me");
+          return text;
+          }
+        function answer(){
+          var radio = document.getElementsByName("trivia");
+          var selection = false;
+          var message = "";
+          for( var i = 0; i < radio.length; i++) {
+            if(radio[i].value == "yes" && radio[i].checked == true) {
+              selection = true;
+            } //end if statement
+          } //end for loop
+          if(selection == true) {
+            message = message + "<b><p style='color:green'>Way to go!</p></b>";
+          } else {
+            message = message + "<b><p style='color:red'>Try again my friend.</p></b>";
+          }
+            document.getElementById("response").innerHTML = message;
+        }
+      </script>
+    <style>
+    </style>
+  </head>
+  <body id="background">
+    <a onclick="return banner()" href="http://simplystem.com">
+      <header id="banner"> <img width="90%" src="https://thumbs.dreamstime.com/z/homemade-chicken-vegetable-soup-top-view-rustic-wood-homemade-chicken-vegetable-soup-top-view-aged-rustic-wood-background-108270447.jpg"/> </header>
+    </a>
+    <nav>
+      <ul id="navmenu">
+        <li class="navitem"> <a href="home.html">Home</a> </li>
+        <li class="navitem"> <a href="games.html">Games</a> </li>
+        <li class="navitem"> <a href="videos.html">Videos</a> </li>
+      </ul>
+    </nav>
+   
+   
+    <div class="rightside">
+      <marquee> CEREAL IS A SOUP!!!</marquee>
+      <ul>
+        <li class="listitem">cereal is a soup</li>
+        <li class="listitem">Amen Brother</li>
+      </ul>
+       <marquee> CEREAL IS A SOUP!!!</marquee>
+    <video width="400" height="220" controls autoplay>
+<source src="https://www.youtube.com/watch?v=GrQc5smEINo">
+Your browser does not support HTML5 video.
+</video>
+    MMMMMMMMMMMMMMMMMMMMMMH <br /> cheerios is the be soup ever created
+    <strong> Eat More Soup </strong>
+    <u>Home</u>
+    <i>Eat more cereal</i>
+    <h1>"Cereal is a soup and anyone who thinks otherwise is an imbusile" -probably the president</h1>
+    <h3>Cream Cheese</h3>
+    <h5>Sliced <span class="wrap-text">Cereal is not not a soup</span></h5>
+    Lucky Charms <hr> Frosted Flakes
+    <p class="paragraph">cheerios plus</p>
+    <small>milk equals</small>
+    <mark>soup</mark>
+<!-- Here's the plan -->
+  <div class="wrap-list">
+    <ol>
+      <li class="listitem">I like cereal</li>
+      <li class="listitem">it is my favorite soup</li>
+    </ol>
+  </div>
+  
+    <ul>
+      <li class="listitem">cereal</li>
+      <li class="listitem">soup</li>
+    </ul>
+    
+    <div class="wrap-trivia">
+    <h2>Cereal trivia</h2>
+    <p>Is cereal a soup?</p>
+    <form>
+      <div id="response"> </div>
+      <input type="radio" name="trivia" value="no" id="button">No<br/>
+      <input type="radio" name="trivia" value="yes" id="button"> Yes <br>
+      <input type="radio" name="trivia" value="no" id="button"> Possibly <br>
+      <input type="radio" name="trivia" value="no" id="button"> I do not know <br>
+      <input onclick="answer()" type="button" value="PRESS ME RIGHT NOW PLEEEEASE">
+    </form>
+    </div>
+    </div
+    
+    
+    
+    
+    <div class="leftside">
+ <img width="50%" src="https://images.stockfreeimages.com/540/sfixl/5408556.jpg" />
+    <img width="50%" src="https://images.stockfreeimages.com/10988/sfixl/109887921.jpg" />
+    <hr />
+    <center>Liam Benson<a href="https://www.coolmathgames.com/">My favorite website</a></center>
+    <table border="1">
+    <tr>
+      <th>Cheerios</th>
+      <th>Frosted Flakes</th>
+    </tr>
+    <tr>
+      <td>Cocoa Puffs</td>
+      <td>Lucky Charms</td>
+    </tr>
+    <audio width="400" height="220" controls autoplay>
+<source src="http://www.w3schools.com/tags/horse.mp3" type="audio/mpeg">
+Your browser does not support HTML 5 audio.
+</audio>
+    </div
+    <div class="clearfloat"></div>
+    
+    
+    
+    
+    
+    </table>
+    <footer id="footer"> Made by Liam Benson</footer>
+  </body>
+</html>
