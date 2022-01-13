@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title> Comment Post </title>
+    <script>
+        var array = [];
+        function validate() {
+            //VARIABLES
+            var name = document.querySelector("#name");
+            var title = document.querySelector("#title");
+            var textarea = document.querySelector("#textarea");
+            var textColor = document.querySelector("#textColor")
+            var bgColor = document.querySelector("#bgColor")
+            var radiobtns = document.querySelector("#radiobtns");
+            var icons = document.querySelectorAll("[name='icon']");
+            var message = document.querySelector("#message");
+
+            radio_choice = true;
+            var blank_field = false;
+
+            if (name.value == "") {
+                name.style.border = "2px solid red";
+                blank_field = true;
+            } else {
+                name.style.border = "2px solid green";
+            }
+
+            if (title.value == "") {
+                title.style.border = "2px solid red";
+                blank_field = true;
+            } else {
+                title.style.border = "2px solid green";
+              
+            }
+            if (textarea.value == "") {
+                textarea.style.border = "2px solid red";
+                blank_field = true;
+            } else {
+                textarea.style.border = "2px solid green";
+               
+            }
+
+            if (textColor.value == "Choose a Color") {
+                textColor.style.border = "2px solid red";
+                blank_field = true;
+            } else {
+                textColor.style.border == "2px solid green";
+        
+            }
+            if (bgColor.value == "Choose a Background Color") {
+                bgColor.style.border = "2px solid red";
+                blank_field = true;
+            } else {
+                bgColor.style.border = "2px solid green";
+         
+            }
+            for (var i = 0; i < icons.length; i++) {
+                if (icons[i].checked == true) {
+                    radio_choice = true;
+                    radiobtns.style.border = "none";
+                    break;
+                } else {
+                    radio_choice = false;
+                    radiobtns.style.border = "2px solid red";
+                }
+            }
+            if (blank_field == false && radio_choice == true) {
+                message.innerHTML = "";
+                save();
+            } else {
+                message.innerHTML = "<h3 style='color:red'>You Missed a Spot!</h3>";
+            }
+        } //end of function validate
+
+        function save() {
+            var name = document.querySelector("#name");
+            var title = document.querySelector("#title");
+            var textarea = document.querySelector("#textarea");
+            var icon = document.querySelectorAll("[name='icon']");
+            var icon_value;
+            var textColor = document.querySelector("#textColor");
+            var bgColor = document.querySelector("#bgColor");
+
+            for (var i = 0; i < icon.length; i++) {
+                if (icon[i].checked == true) {
+                    icon_value = icon[i].value;
+                }
+            }
+
+            var storage = { name: name.value, title: title.value, textarea: textarea.value, icon: icon_value, textColor: textColor.value, bgColor: bgColor.value };
+            array.push(storage);
+
+            display();
+        }
+        function display() {
+            var show = document.querySelector("#show");
+            var post = "";
+            for (var i = 0; i < array.length; i++) {
+                post += "<div id='userComment' style='background-color:" + array[i].bgColor + "; " + "color:" + array[i].textColor + ";'>";
+                post += "<input type='checkbox' onclick='gone(" + i + ");'/>";
+                post += "<img src='" + array[i].icon + "' class='icon' />";
+                post += "<strong>" + array[i].name + "</strong><br>";
+                post += "<strong>" + array[i].title + "</strong><br>";
+                post += array[i].textarea;
+                post += "</div>";
+            }
+            show.innerHTML = post;
+        }
+        function gone(index) {
+            array.splice(index, 1);
+            display();
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img id="logo" class="img-responsive" src="yoshi.jpg" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="menu">
+                <nav class="navbar navbar-expand bg-info navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://grovecitychristian.org/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.raspberrypi.org/">My Code Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com/liam_benson/?hl=en">About Me</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="comments">
+                COMMENTS
+                <div class="col-sm-12 col-md-5" id="form">
+                    <header id="header">Leave a Comment</header>
+                    <div id="message"></div>
+                    <form class="form-inline">
+                        <label>Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Name"></input>
+                        <label>Color:</label>
+                        <select id="textColor" class="form-control">
+                            <option>Choose a Color</option>
+                            <option>Brown</option>
+                            <option>Blue</option>
+                            <option>Purple</option>
+                            <option>Yellow</option>
+                        </select>
+                    </form>
+                    <form>
+                        <label>Title:</label>
+                        <input type="text" class="form-control" id="title" placeholder="Comment Title">
+                        <label>Background Color:</label>
+                        <select id="bgColor" class="form-control">
+                            <option>Choose a Background Color</option>
+                            <option>Brown</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                            <option>Red</option>
+                        </select>
+                    </form>
+                    <form class="form-inline" id="radiobtns">
+                        <label>Icons:</label>
+                        <input type="radio" name="icon" value="megaman.png">
+                        <img src="megaman.png" class="icon" />
+
+                        <input type="radio" name="icon" value="sanic the hodgehedge.png">
+                        <img src="sanic the hodgehedge.png" class="icon" />
+
+                        <input type="radio" name="icon" value="hamster.jpg">
+                        <img src="hamster.jpg" class="icon" />
+
+                        <input type="radio" name="icon" value="spongeboy.png">
+                        <img src="spongeboy.png" class="icon" />
+                    </form>
+                    <label>Comment:</label> <br>
+                    <textarea id="textarea" class="btn-primary" type="btn" value="Click Here"></textarea> <br>
+
+                    <input onclick="javascript:validate();" class="btn btn-default" type="button"
+                        value="Submit Comment">
+                </div><!-- end form id div -->
+                <div id="show"></div>
+            </div><!-- end comment id div -->
+        </div>
+    </div> <!-- end container div -->
+</body>
+
+</html>

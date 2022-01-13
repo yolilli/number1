@@ -1,0 +1,17 @@
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <!-- Code belonging to this column is here! This could for the first website you created -->
+            </div>
+            <div class="col-6">
+                <!-- Code belonging to this column is here! This could for the responsive website you created -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <!-- Code belonging to this column is here! This could for a JavaScript game you created or something else or just for future projects! -->
+            </div>
+        </div>
+    </div>
+</body>

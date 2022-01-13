@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <title> JavaScript Practice </title>
+    <script> 
+    var games = ["pokemon", "minecraft", "God of War", "mario", "metroid"];
+    function start() {
+       var age= 69;
+       var name= "John Cena";
+        alert(name + " is " + age);
+    }
+    function math(){
+        var calc = 69 + 69;
+        alert(calc);
+    }
+    function question(){
+        var question = prompt("What is MY favorite color?")
+        if (question == "blue") {
+            alert("YESSSSSSSS");
+        } else if (question == "pink") {
+            alert("YESSSSSSSS")
+        } else {
+            alert("NOOOOOOO");
+        }
+    }
+    function rate(){
+        var q = prompt("How much do you like JavaScript 1-10?");
+        if (q<4){
+            alert("wrong");
+        }else if(q<7){
+            alert("wrong again");
+        } else {
+            alert("You're in for a real treat!");
+        }
+    }
+    function change(){
+        var edit = document.querySelector("#find");
+        edit.innerHTML = "<center>NICE</center></br>"
+    }
+    var pass = 1;
+function toggle(){
+var twitch = document.querySelector("#rotate");
+if (pass == 1){
+twitch.innerHTML = "You didn't see anything...";
+pass = 2;
+return;
+        }else if (pass == 2) {
+            twitch.innerHTML = "<img src='https://simplycoding.s3-us-west-2.amazonaws.com/Images/piskelFish.png' />";
+            pass = 3;
+            return;
+        } else{
+            twitch.innerHTML = "Ta-da!";
+            pass = 1;
+            return;
+        }
+
+    }
+    function joke(){
+        var q = prompt("what color is the sky");
+        while(q != "blue"){
+            q = prompt("what color is the sky");
+        }
+        alert("GG");
+    }
+    function oddCounts(){
+        for(var i = 1; i < 10; i+=2){
+        alert(i);
+    }
+}
+var sentence = "railroad crossing look out for the cars can you spell that without any r's";
+var array = [];
+for (var i = 0; i < sentence.length; i++){
+if(sentence[i] == "r") {
+array.push(sentence[i]);
+}
+}
+var shirt = {color:"orange & blue", price: 19.92, size: "XL", shipping: 2.37};
+function obj(){
+    var ask = prompt("What do you want to know about my shirt? (color, price, size or shipping):");
+    alert("This shirt's " + ask + " is " + shirt[ask]);
+}//end function obj
+function morph(){
+    var box = document.querySelector("#box");
+    box.style.backgroundColor = "black";
+    box.style.border = "12px ridge yellow";
+    box.innerHTML = "Did you just see that!";
+}
+    </script>
+    <style>
+        #box{
+        color: orange;
+        background-color: green;
+        height: 250px;
+        width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        There are <script>document.write(array.length);</script> r's in the sentence: "<script>document.write(sentence);</script>"
+    </div>
+    <p> My favorite game is <script>document.write(games[0]);</script></p>
+    <div id="rotate">This text may change, even into an picture</div>
+    <div id="find">My JavaScript Practive Page</div>
+    <input type="button" onclick="start()" value="Alert Me">
+    <input type="button" onclick="math()" value="Calculate">
+    <input type="button" onclick="question()" value="Question">
+    <input type ="button" onclick="rate()" value="Rate JavaScript please righ now it would be so helpful">
+    <input type = "button" onclick="change()" value="PRESS MEEEEEEEEEE">
+    <input type = "button" onclick="toggle()" value= "change button">
+    <input type="button" onclick="joke()" value="Joke">
+    <input type="button" onclick="oddCounts()" value="For Loop">
+    <input type = "button" onclick = "obj()" value = "T shirt question">
+    <input type="button" onclick="morph()" value="Change the Box">
+    <div id="box">hello</div>
+</body>
+
+</html>

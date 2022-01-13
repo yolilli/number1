@@ -1,0 +1,45 @@
+#logo {
+  width: 50%;
+}
+#menu {
+    margin-top:10px;
+    }
+#comments {
+    background:linear-gradient(to bottom right, white, brown);
+    border:5px solid brown;
+    margin-top:5px;
+    height: 900px;
+    width: 100px;
+}
+#form{
+    border: 3px solid blue;
+    height: 700px;
+    float:right;
+    margin:10px;
+    background-color: yellow;
+}
+#name{
+    width: 150px;
+    margin-right: 8px;
+}
+#header{
+    text-align:center;
+    background-color:brown;
+    font-size:2.5em;
+    text-decoration:bold;
+    color: limegreen;
+    border-radius:10px;
+    margin-left:-16px;
+    margin-right:-16px;
+    margin-bottom:15px;
+}
+.icon{
+    width:45px;
+    height: 45px;
+    padding-right: 10px;
+}
+#userComment{
+    border:4px solid purple;
+    border-radius: 15px;
+    width: 200px;
+    }
